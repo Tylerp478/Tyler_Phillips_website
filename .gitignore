@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+._*
+
+# Local editor / tooling config
+.claude/
+
+# Résumé source documents.
+# The PDFs the site actually serves live in assets/ and ARE committed.
+# This keeps the editable .docx originals off a public repo — delete this
+# line if you'd rather version them too.
+Resumes/
+
+# Original headshot at the repo root — the copy the site serves is
+# assets/tyler-phillips-headshot.jpeg, which IS committed.
+/tyler_headshot.jpeg
