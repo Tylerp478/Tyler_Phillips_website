@@ -301,10 +301,18 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
   transition: transform .22s, box-shadow .22s, border-color .22s;
 }
 .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--line-2); }
-/* left column stacks the project + lab; writing card runs the full height beside them */
+/* left column stacks project + lab + AI build; writing card runs the full height beside them */
 .card--feature { grid-column: 1; grid-row: 1; }
 .card--lab     { grid-column: 1; grid-row: 2; }
-.card--writing { grid-column: 2; grid-row: 1 / span 2; }
+.card--ai      { grid-column: 1; grid-row: 3; }
+.card--writing {
+  grid-column: 2; grid-row: 1 / span 3;
+  /* fill the full height of the left-hand stack, then let the post list
+     absorb the slack so the card doesn't end short of the column beside it */
+  align-self: stretch;
+  display: flex; flex-direction: column;
+}
+.card--writing .posts { flex: 1 1 auto; align-content: space-between; }
 .card__head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; }
 .card__kind {
   font-family: var(--mono); font-size: 11px; letter-spacing: .09em; text-transform: uppercase; font-weight: 600;
@@ -419,7 +427,7 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
   .about__card { position: static; }
   .creds { grid-template-columns: 1fr; }
   .cards { grid-template-columns: 1fr; }
-  .card--feature, .card--lab, .card--writing { grid-column: auto; grid-row: auto; }
+  .card--feature, .card--lab, .card--ai, .card--writing { grid-column: auto; grid-row: auto; }
   .contact__grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 
