@@ -195,8 +195,15 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
 .hero__name { font-size: clamp(2.6rem, 6.2vw, 4.35rem); letter-spacing: -0.035em; margin-bottom: 6px; }
 .hero__role {
   font-size: clamp(1.05rem, 2.3vw, 1.4rem); font-weight: 600; color: var(--accent);
-  margin-bottom: 20px; letter-spacing: -0.01em;
+  margin-bottom: 7px; letter-spacing: -0.01em;
 }
+/* credential line — deliberately quieter than the role above it */
+.hero__credential {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: .95rem; font-weight: 600; color: var(--ink-2);
+  margin-bottom: 22px;
+}
+.hero__credential svg { width: 16px; height: 16px; color: var(--accent); stroke-width: 1.8; }
 .hero__blurb { font-size: clamp(1rem, 1.6vw, 1.12rem); color: var(--ink-2); max-width: 56ch; margin-bottom: 24px; }
 
 .hero__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
